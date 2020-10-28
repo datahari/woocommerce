@@ -168,6 +168,9 @@ class WC_Product_Download implements ArrayAccess {
 			case 'absolute':
 				$this->data['file'] = esc_url_raw( $value );
 				break;
+			case 'shortcode':
+				$this->data['file'] = wc_clean( apply_shortcodes( $value ) );
+				break;
 			default:
 				$this->data['file'] = wc_clean( $value );
 				break;
